@@ -6,3 +6,16 @@
     --cor-contraste:#5c802d;
     --cor-botao:#ffc1c1;
 }
+
+body {
+    max-width: 100vw;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+header{
+    background-color: var(--cor-primaria);
+    color: var(--cor-contraste);
+    text-align: center;
+    margin: 0 auto;
+    padding: 16px;
+}
