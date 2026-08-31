@@ -23,7 +23,7 @@ function prepararReacoes() {
         const chaveBotaoUM = `${idCard}-botaoUM`;
          const chaveBotaoUM = `${idCard}-botaoDOIS`;
 
-         let UM = Number(localStorage.getItem(chaveBotaoUM))
+         let UM = Number(localStorage.getItem(chaveBotaoUM))|| 0;
 
     })
 }
