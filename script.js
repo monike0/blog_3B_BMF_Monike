@@ -19,5 +19,9 @@ function prepararReacoes() {
          const contadorBotaoDOIS = botaoDOIS.queryselector("span");
 
         const idCard = `card-${indice + 1}`;
+
+        const chaveBotaoUM = `${idCard}-botaoUM`;
+         const chaveBotaoUM = `${idCard}-botaoDOIS`;
+
     })
 }
