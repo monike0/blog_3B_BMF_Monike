@@ -24,6 +24,8 @@ function prepararReacoes() {
          const chaveBotaoUM = `${idCard}-botaoDOIS`;
 
          let UM = Number(localStorage.getItem(chaveBotaoUM))|| 0;
+            let DOIS = Number(localStorage.getItem(chaveBotaoDOIS))|| 0;
+
 
     })
 }
