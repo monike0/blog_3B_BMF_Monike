@@ -37,6 +37,13 @@ function prepararReacoes() {
          contadorBotaoDOIS.textContent = DOIS;
          contadorBotaoTRES.textContent = TRES;
 
+        botaoUM.addEventListener("click", () =>{
+            UM++;
+            contadorBotaoUM.textContent = UM;
 
+            localStorage.setItem(
+                
+            )
+        })
     })
 }
