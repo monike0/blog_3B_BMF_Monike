@@ -14,5 +14,10 @@ function prepararReacoes() {
         }
         const botaoUM = botoes[0];
         const botaoDOIS = botoes[1];
+
+        const contadorBotaoUM = botaoUM.queryselector("span");
+         const contadorBotaoDOIS = botaoDOIS.queryselector("span");
+
+        const idCard = `card-${indice + 1}`;
     })
 }
