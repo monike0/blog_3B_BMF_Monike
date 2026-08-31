@@ -42,8 +42,27 @@ function prepararReacoes() {
             contadorBotaoUM.textContent = UM;
 
             localStorage.setItem(
-                
-            )
+                chaveBotaoUM, UM
+
+            );
+
+             botaoDOIS.addEventListener("click", () =>{
+            DOIS++;
+            contadorBotaoDOIS.textContent = DOIS;
+
+            localStorage.setItem(
+                chaveBotaoDOIS, DOIS
+
+            );
+
+             botaoDOIS.addEventListener("click", () =>{
+            DOIS++;
+            contadorBotaoDOIS.textContent = DOIS;
+
+            localStorage.setItem(
+                chaveBotaoDOIS, DOIS
+
+            );
         })
     })
 }
