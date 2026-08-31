@@ -14,17 +14,28 @@ function prepararReacoes() {
         }
         const botaoUM = botoes[0];
         const botaoDOIS = botoes[1];
+         const botaoTRES = botoes[2];
+
 
         const contadorBotaoUM = botaoUM.queryselector("span");
          const contadorBotaoDOIS = botaoDOIS.queryselector("span");
+            const contadorBotaoDOIS = botaoTRES.queryselector("span");
+
 
         const idCard = `card-${indice + 1}`;
 
         const chaveBotaoUM = `${idCard}-botaoUM`;
-         const chaveBotaoUM = `${idCard}-botaoDOIS`;
+         const chaveBotaoDOIS = `${idCard}-botaoDOIS`;
+            const chaveBotaoTRES = `${idCard}-botaoTRES`;
+
 
          let UM = Number(localStorage.getItem(chaveBotaoUM))|| 0;
             let DOIS = Number(localStorage.getItem(chaveBotaoDOIS))|| 0;
+             let TRES = Number(localStorage.getItem(chaveBotaoTRES))|| 0;
+
+        contadorBotaoUM.textContent = UM;
+         contadorBotaoDOIS.textContent = DOIS;
+         contadorBotaoTRES.textContent = TRES;
 
 
     })
