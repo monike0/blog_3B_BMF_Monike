@@ -66,3 +66,19 @@ function prepararReacoes() {
         })
     })
 }
+<script>// Funcionalidade do Contador de Curtidas
+document.querySelectorAll('.btn-curtir').forEach(button => {
+  button.addEventListener('click', () => {
+    const contador = button.querySelector('.contador');
+    let quant = parseInt(contador.textContent);
+    contador.textContent = quant + 1;
+  });
+});
+
+// Funcionalidade do Alternador de Modo Escuro
+const btnTema = document.getElementById('toggle-theme');
+if (btnTema) {
+  btnTema.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+  });
+}</script>
