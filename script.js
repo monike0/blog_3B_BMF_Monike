@@ -82,3 +82,28 @@ if (btnTema) {
     document.body.classList.toggle('dark-mode');
   });
 }</script>
+
+
+document.addEventListener('DOMContentLoaded', () => {
+
+  // 1. Lógica do Botão de Modo Escuro
+  const btnTema = document.getElementById('toggle-theme');
+  if (btnTema) {
+    btnTema.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+    });
+  }
+
+  // 2. Lógica do Botão de Curtir
+  const botoesCurtir = document.querySelectorAll('.btn-curtir');
+  botoesCurtir.forEach(button => {
+    button.addEventListener('click', () => {
+      const contador = button.querySelector('.contador');
+      if (contador) {
+        let quant = parseInt(contador.textContent) || 0;
+        contador.textContent = quant + 1;
+      }
+    });
+  });
+
+});
