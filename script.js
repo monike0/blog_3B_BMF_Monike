@@ -1,109 +1,63 @@
-document.addEventListener("DOMContentloaded", () =>{
-prepararReacoes();
-prepararAnimacaoCard();
-criarBotaoTopo();
-})
+document.addEventListener("DOMContentLoaded", () => {
+    prepararReacoes();
+    prepararModoEscuro();
+});
 
+// Lógica para alternar Modo Escuro
+function prepararModoEscuro() {
+    const btnTema = document.getElementById("toggle-theme");
+    if (btnTema) {
+        btnTema.addEventListener("click", () => {
+            document.body.classList.toggle("dark-mode");
+        });
+    }
+}
+
+// Lógica das curtidas salvas no navegador (localStorage)
 function prepararReacoes() {
-    const artigos = document.queryselectorAll("article");
+    const artigos = document.querySelectorAll("article");
 
-    artigos.forEach((artigo, indice) =>{
-        const botoes = artigo.queryselectorAll("Button");
-        if(botoes.leght < 2) {
-            return;
-        }
+    artigos.forEach((artigo, indice) => {
+        const botoes = artigo.querySelectorAll(".btn-curtir");
+        if (botoes.length < 3) return;
+
         const botaoUM = botoes[0];
         const botaoDOIS = botoes[1];
-         const botaoTRES = botoes[2];
+        const botaoTRES = botoes[2];
 
-
-        const contadorBotaoUM = botaoUM.queryselector("span");
-         const contadorBotaoDOIS = botaoDOIS.queryselector("span");
-            const contadorBotaoDOIS = botaoTRES.queryselector("span");
-
+        const contadorBotaoUM = botaoUM.querySelector(".contador");
+        const contadorBotaoDOIS = botaoDOIS.querySelector(".contador");
+        const contadorBotaoTRES = botaoTRES.querySelector(".contador");
 
         const idCard = `card-${indice + 1}`;
-
         const chaveBotaoUM = `${idCard}-botaoUM`;
-         const chaveBotaoDOIS = `${idCard}-botaoDOIS`;
-            const chaveBotaoTRES = `${idCard}-botaoTRES`;
+        const chaveBotaoDOIS = `${idCard}-botaoDOIS`;
+        const chaveBotaoTRES = `${idCard}-botaoTRES`;
 
-
-         let UM = Number(localStorage.getItem(chaveBotaoUM))|| 0;
-            let DOIS = Number(localStorage.getItem(chaveBotaoDOIS))|| 0;
-             let TRES = Number(localStorage.getItem(chaveBotaoTRES))|| 0;
+        let UM = Number(localStorage.getItem(chaveBotaoUM)) || 0;
+        let DOIS = Number(localStorage.getItem(chaveBotaoDOIS)) || 0;
+        let TRES = Number(localStorage.getItem(chaveBotaoTRES)) || 0;
 
         contadorBotaoUM.textContent = UM;
-         contadorBotaoDOIS.textContent = DOIS;
-         contadorBotaoTRES.textContent = TRES;
+        contadorBotaoDOIS.textContent = DOIS;
+        contadorBotaoTRES.textContent = TRES;
 
-        botaoUM.addEventListener("click", () =>{
+        botaoUM.addEventListener("click", () => {
             UM++;
             contadorBotaoUM.textContent = UM;
+            localStorage.setItem(chaveBotaoUM, UM);
+        });
 
-            localStorage.setItem(
-                chaveBotaoUM, UM
-
-            );
-
-             botaoDOIS.addEventListener("click", () =>{
+        botaoDOIS.addEventListener("click", () => {
             DOIS++;
             contadorBotaoDOIS.textContent = DOIS;
+            localStorage.setItem(chaveBotaoDOIS, DOIS);
+        });
 
-            localStorage.setItem(
-                chaveBotaoDOIS, DOIS
-
-            );
-
-             botaoDOIS.addEventListener("click", () =>{
-            DOIS++;
-            contadorBotaoDOIS.textContent = DOIS;
-
-            localStorage.setItem(
-                chaveBotaoDOIS, DOIS
-
-            );
-        })
-    })
+        botaoTRES.addEventListener("click", () => {
+            TRES++;
+            contadorBotaoTRES.textContent = TRES;
+            localStorage.setItem(chaveBotaoTRES, TRES);
+        });
+    });
 }
-<script>// Funcionalidade do Contador de Curtidas
-document.querySelectorAll('.btn-curtir').forEach(button => {
-  button.addEventListener('click', () => {
-    const contador = button.querySelector('.contador');
-    let quant = parseInt(contador.textContent);
-    contador.textContent = quant + 1;
-  });
-});
-
-// Funcionalidade do Alternador de Modo Escuro
-const btnTema = document.getElementById('toggle-theme');
-if (btnTema) {
-  btnTema.addEventListener('click', () => {
-    document.body.classList.toggle('dark-mode');
-  });
-}</script>
-
-
-document.addEventListener('DOMContentLoaded', () => {
-
-  // 1. Lógica do Botão de Modo Escuro
-  const btnTema = document.getElementById('toggle-theme');
-  if (btnTema) {
-    btnTema.addEventListener('click', () => {
-      document.body.classList.toggle('dark-mode');
-    });
-  }
-
-  // 2. Lógica do Botão de Curtir
-  const botoesCurtir = document.querySelectorAll('.btn-curtir');
-  botoesCurtir.forEach(button => {
-    button.addEventListener('click', () => {
-      const contador = button.querySelector('.contador');
-      if (contador) {
-        let quant = parseInt(contador.textContent) || 0;
-        contador.textContent = quant + 1;
-      }
-    });
-  });
-
-});
